@@ -4,9 +4,11 @@ const cors = require("cors");
 const v1 = require("./routes/v1");
 const consumerModule = require("./modules/kafkamodule");
 const jwtVerifyMiddleware = require("./middlewares/verify");
+const morganMiddleware = require("./middlewares/morgan");
 
 const app = express();
 
+app.use(morganMiddleware);
 app.use(jwtVerifyMiddleware);
 consumerModule();
 

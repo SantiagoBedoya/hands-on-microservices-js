@@ -16,6 +16,9 @@
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "kafkajs": "^2.2.4",
-    "mongoose": "^8.9.3"
+    "mongoose": "^8.9.3",
+    "morgan": "1.10.0",
+    "winston": "3.17.0",
+    "winston-logstash": "^1.2.1"
   }
 }

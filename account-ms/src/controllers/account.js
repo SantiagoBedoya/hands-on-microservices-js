@@ -1,4 +1,5 @@
 const accountService = require("../services/account");
+const { logger } = require("../log/logger");
 
 function mapToResponse(account) {
   const { id, name, number, type, status } = account;
@@ -12,6 +13,7 @@ function mapToResponse(account) {
 }
 
 const getAccounts = async (req, res) => {
+  logger.info("getAccounts method called");
   const result = await accountService.getAllAccounts();
   res
     .status(200)
@@ -19,6 +21,7 @@ const getAccounts = async (req, res) => {
 };
 
 const getAccountById = async (req, res) => {
+  logger.info("getAccountById method called", { accountId: req.params.id });
   const result = await accountService.getAccountById(req.params.id);
   if (result) {
     res.status(200).json({ success: true, account: mapToResponse(result) });
