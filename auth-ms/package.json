@@ -1,6 +1,7 @@
 {
-  "name": "account-ms",
+  "name": "auth-ms",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js"
@@ -8,14 +9,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
-    "kafkajs": "^2.2.4",
     "mongoose": "^8.9.3"
   }
 }

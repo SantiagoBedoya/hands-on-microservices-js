@@ -3,9 +3,12 @@ const cors = require("cors");
 
 const v1 = require("./routes/v1");
 const consumerModule = require("./modules/kafkamodule");
+const jwtVerifyMiddleware = require("./middlewares/verify");
 
-consumerModule();
 const app = express();
+
+app.use(jwtVerifyMiddleware);
+consumerModule();
 
 const corsConfig = {
   origin: "http://localhost:3000",
